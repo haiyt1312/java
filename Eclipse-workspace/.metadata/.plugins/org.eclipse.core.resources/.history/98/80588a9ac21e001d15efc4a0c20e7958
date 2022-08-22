@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package com.example.login.application;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.example.login.model.Account;
+
+/**
+ * @author Admin
+ *
+ */
+@SpringBootApplication
+public class LoginApplication {
+	@Bean(name = "account_bean")
+	public Account setAccount() {
+		Account acc = new Account();
+		acc.setUsername("admin");
+		acc.setPassword("123");
+		return acc;
+	}
+}

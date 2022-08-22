@@ -1,0 +1,56 @@
+/**
+ * 
+ */
+package com.example.demo3.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.demo3.dao.UserRepository;
+import com.example.demo3.model.User;
+
+/**
+ * @author Admin
+ *
+ */
+@Service
+public class UserService {
+	@Autowired
+	private UserRepository userRepository;
+	
+	public List<User> getUsers(){
+		return userRepository.findAll();
+	}
+	
+	public Optional<User> getUserById(Integer id){
+		return userRepository.findById(id);
+	}
+	
+	public Optional<User> getUserByName(String name){
+		return Optional.ofNullable(userRepository.findUserByName(name));
+	}
+	
+	public <S extends User> S save(S entity) {
+		return userRepository.save(entity);
+	}
+	
+	public User saveUser(User savedUser, boolean isNew) {
+		User user = new User();
+		if (!isNew) {
+			user.setId(savedUser.getId());
+		}
+		user.setName(savedUser.getName());
+		user.setAddress(savedUser.getAddress());
+		return userRepository.save(user);
+	}
+
+	public void deleteById(Integer id) {
+		userRepository.deleteById(id);
+	}
+	
+	
+}

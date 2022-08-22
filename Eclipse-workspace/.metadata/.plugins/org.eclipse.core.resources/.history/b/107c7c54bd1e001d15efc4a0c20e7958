@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.example.login.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * @author Admin
+ *
+ */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class account {
+	private String username;
+	private String password;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/dashboardLayout.html}">
+
+<head>
+</head>
+
+<body>
+    <section class="row" layout:fragment="content">
+        <form action="" method="post">
+            <div class="col mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Add New Product</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="form-group">
+                                    <label for="productId">Product ID:</label>
+                                    <input type="text" class="form-control" name="productId" id="productId"
+                                        aria-describedby="productIdHid" placeholder="productId">
+                                    <small id="productIdHid" class="form-text text-muted">Produc ID is
+                                        required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        aria-describedby="nameHid" placeholder="name">
+                                    <small id="nameHid" class="form-text text-muted">Name is required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="text" class="form-control" name="quantity" id="quantity"
+                                        aria-describedby="quantityHid" placeholder="qunatity">
+                                    <small id="quantityHid" class="form-text text-muted">Quantity is
+                                        required</small>
+                                </div>
+                                <div class="input-group form-group">
+                                    <span class="input-group-text">Unit Price</span>
+                                    <input type="number" name="unitPrice" id="unitPrice" class="form-control"
+                                        placeholder="Unit Price">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="categoryId">Category</label>
+                                    <select class="form-control" name="categoryId" id="categoryId">
+                                        <option>C1</option>
+                                        <option>C2</option>
+                                        <option>C3</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-5">
+                                <img src="../../images/logo.png" width="80%"
+                                    class=" img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} "
+                                    alt=" ">
+                                <div class="form-group">
+                                    <label for="productImage">Image File</label>
+                                    <input type="file" class="form-control-file" name="productImage" id="productImage"
+                                        placeholder="Product Image" aria-describedby="productImageHid">
+                                    <small id="productImageHid" class="form-text text-muted">Product image is
+                                        required</small>
+                                </div>
+                                <div class="input-group form-group">
+                                    <span class="input-group-text">Discount</span>
+                                    <input type="number" name="discount" id="discount" class="form-control"
+                                        placeholder="Discount">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-control" name="status" id="status">
+                                        <option>Out of Stock</option>
+                                        <option>On Sale</option>
+                                        <option>Featured</option>
+                                        <option>Best Seller</option>
+                                        <option>Out of Order</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" name="description" id="description"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted ">
+                            <button class="btn btn-success">New</button>
+                            <button class="btn btn-primary">Save</button>
+                            <button class="btn btn-danger float-end">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
